@@ -4,6 +4,12 @@
 int InputNumbers(int arr[], int size);
 int CalculateTotal(int arr[], int size);
 int CalculateAverage(int arr[], int size);
+int FindMax(int arr[], int size);
+int FindMin(int arr[], int size);
+int SearchValue(int arr[], int size);
+int Multiple3(int arr[], int size);
+int ReverseArray(int arr[], int size);
+float divides3(int arr[], int size);
 
 int main()
 {
@@ -39,13 +45,41 @@ int main()
         case 3:
             CalculateAverage(numbers,5);
             break;
+
+        case 4:
+            printf("Highest Value : %d\n",FindMax(numbers,5));
+            break;
+
+        case 5:
+            printf("Lowest Value : %d\n\n",FindMin(numbers,5));
+            break;
+
+        case 6:
+            SearchValue(numbers,5);
+            break;
+
+        case 7:
+            ReverseArray(numbers,5);
+            break;
+
+        case 8:
+            Multiple3(numbers,5);
+            break;
+
+        case 9:
+            divides3(numbers,5);
+            break;
+
+
         }
 
     }
-    while(choice !=5);
+    while(choice !=9);
 
     return 0;
 }
+
+
 
 int InputNumbers(int arr[], int size)
 {
@@ -70,6 +104,8 @@ int CalculateTotal(int arr[], int size)
     return 0;
 }
 
+
+
 int CalculateAverage(int arr[], int size)
 {
     int sum =0;
@@ -85,3 +121,86 @@ int CalculateAverage(int arr[], int size)
     return 0;
 }
 
+
+
+int FindMax(int arr[], int size)
+{
+    for(int i=1; i<5; i++)
+    {
+        int max = arr[0];
+        if(arr[i] > max)
+        {
+            max = arr[i];
+            return max;
+        }
+    }
+}
+
+
+
+int FindMin(int arr[], int size)
+{
+    for(int i=1; i<5; i++)
+    {
+        int min = arr[0];
+        if(arr[i]< min)
+        {
+            min = arr[i];
+            return min;
+        }
+    }
+}
+
+
+
+int SearchValue(int arr[], int size)
+{
+    int value;
+    printf("Enter a value : ");
+    scanf("%d",&value);
+
+    for(int i=0; i<5; i++)
+    {
+        if(value==arr[i])
+        {
+            printf("%d is in the array.\n",value);
+            return 0;
+        }
+    }
+    printf("%d is not in the array.\n",value);
+    return 0;
+}
+
+
+
+int ReverseArray(int arr[], int size)
+{
+    for(int i=4; i>=0; i--)
+    {
+        printf("%d\n",arr[i]);
+    }
+    return 0;
+}
+
+
+
+int Multiple3(int arr[], int size)
+{
+    for(int i=0; i<5; i++)
+    {
+        int value = arr[i]*3;
+        printf("%d\n",value);
+    }
+    return 0;
+}
+
+
+float divides3(int arr[], int size)
+{
+    for(int i=0; i<5; i++)
+    {
+        float value = arr[i]/3;
+        printf("%.2f\n",value);
+    }
+    return 0;
+}
